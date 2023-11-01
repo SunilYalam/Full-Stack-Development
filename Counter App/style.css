@@ -1,0 +1,26 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 0 0 5px gray;
+    padding: 20px;
+    gap: 12px;
+}
+button{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+#displayValue{
+    padding: 6px 16px;
+    font-size: 25px;
+    border: 1px solid gray;
+}
