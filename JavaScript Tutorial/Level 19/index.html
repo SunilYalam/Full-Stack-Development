@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        p {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="validationMessage"></p>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const validationMessageElement = document.getElementById('validationMessage');
+
+            if (email.includes('@') && password.length >= 8) {
+                validationMessageElement.textContent = 'Valid email and password!';
+                validationMessageElement.className = 'success';
+            } else {
+                validationMessageElement.textContent = 'Invalid email or password!';
+                validationMessageElement.className = '';
+            }
+        });
+    </script>
+</body>
+</html>

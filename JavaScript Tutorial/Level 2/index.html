@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="num1" placeholder="Enter First Number" required>
+    <input type="text" name="#" id="num2" placeholder="Enter Second Number" required>
+
+    <select name="#" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button onclick="calculateMath()">Submit</button>
+    <input type="text" name="" id="result">
+    </div>
+    
+
+   <!-- <script>
+    function calculateMath(){
+    let num1 = parseInt(document.getElementById('num1').value);
+    let num2 = parseInt(document.getElementById('num2').value);
+    let oper = document.getElementById('operator').value;
+
+   if(oper === '+'){
+     document.getElementById('result').value = num1 + num2;
+   } else if(oper === '-'){
+    document.getElementById('result').value = num1 - num2;
+   } else if (oper === '*'){
+    document.getElementById('result').value = num1 * num2;
+   }else if(oper === '/'){
+    document.getElementById('result').value = num1 / num2;
+   } else{
+    document.getElementById('result').innerHTML = "Invalid Syntax";
+   }
+  }
+   </script> -->
+   <script src="./script.js"></script>
+</body>
+</html>

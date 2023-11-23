@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Todo App</h2>
+    <input type="text" id="todoInput" placeholder="Enter your todo">
+    <button onclick="addTodo()">Add Todo</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        function addTodo() {
+            const todoInput = document.getElementById('todoInput');
+            const todoList = document.getElementById('todoList');
+
+            if (todoInput.value.trim() !== '') {
+                const newTodo = document.createElement('li');
+                newTodo.textContent = todoInput.value;
+                todoList.appendChild(newTodo);
+                todoInput.value = ''; // Clear the input field
+            } else {
+                alert('Please enter a valid todo.');
+            }
+        }
+    </script>
+</body>
+</html>

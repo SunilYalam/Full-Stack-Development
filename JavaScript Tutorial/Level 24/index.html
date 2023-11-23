@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Words</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        p {
+            line-height: 1.5;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <script>
+        const paragraph = document.getElementById('paragraph');
+        const words = paragraph.innerText.split(' ');
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > 8) {
+                const span = document.createElement('span');
+                span.textContent = words[i];
+                span.classList.add('highlight');
+                paragraph.replaceChild(span, paragraph.childNodes[i]);
+            }
+        }
+    </script>
+</body>
+</html>

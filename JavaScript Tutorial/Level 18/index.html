@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Heading Text</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">The most affordable learning platform</h1>
+    <button id="toggleButton" onclick="toggleHeading()">Toggle Heading</button>
+
+    <script>
+        // JavaScript to toggle heading text
+        function toggleHeading() {
+            const headingElement = document.getElementById('heading');
+            const currentText = headingElement.innerText;
+
+            if (currentText === 'The most affordable learning platform') {
+                headingElement.innerText = 'PW Skills';
+            } else {
+                headingElement.innerText = 'The most affordable learning platform';
+            }
+        }
+    </script>
+</body>
+</html>

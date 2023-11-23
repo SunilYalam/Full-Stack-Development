@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    canvas {
+      border: 1px solid #000;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+  <title>Arrow Key Image Movement</title>
+</head>
+<body>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const image = new Image();
+    image.src = 'path/to/your/image.png'; // replace with the path to your image
+
+    const position = {
+      x: canvas.width / 2 - 25, // adjust based on image size
+      y: canvas.height / 2 - 25,
+    };
+
+    const speed = 5;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, position.x, position.y, 50, 50); // adjust size as needed
+    }
+
+    function update() {
+      draw();
+    }
+
+    function handleKeyPress(e) {
+      switch (e.key) {
+        case 'ArrowUp':
+          position.y -= speed;
+          break;
+        case 'ArrowDown':
+          position.y += speed;
+          break;
+        case 'ArrowLeft':
+          position.x -= speed;
+          break;
+        case 'ArrowRight':
+          position.x += speed;
+          break;
+      }
+    }
+
+    function gameLoop() {
+      update();
+      requestAnimationFrame(gameLoop);
+    }
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    image.onload = function () {
+      gameLoop();
+    };
+  </script>
+</body>
+</html>

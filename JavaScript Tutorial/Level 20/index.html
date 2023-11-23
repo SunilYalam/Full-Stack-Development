@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Item Addition</title>
+</head>
+<body>
+    <h2>What you'll learn:</h2>
+    <ul id="learningList"></ul>
+    <button onclick="addItem()">Add Item</button>
+
+    <script>
+        const learningItems = [
+            'JavaScript Basics',
+            'DOM Manipulation',
+            'Asynchronous JavaScript',
+            'Event Handling',
+            'AJAX and Fetch API',
+            // Add more items as needed
+        ];
+
+        let currentIndex = 0;
+
+        function addItem() {
+            const learningList = document.getElementById('learningList');
+            const newItem = document.createElement('li');
+
+            if (currentIndex < learningItems.length) {
+                newItem.textContent = learningItems[currentIndex];
+                learningList.appendChild(newItem);
+                currentIndex++;
+            } else {
+                alert('All items have been added.');
+            }
+        }
+    </script>
+</body>
+</html>

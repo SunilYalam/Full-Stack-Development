@@ -1,0 +1,17 @@
+body{
+    background: blueviolet;
+}
+.container{
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.container input{
+    text-align: center;
+    display: flex;
+    margin: 20px;
+    padding: 15px;
+    align-items: center;
+    border: 1px solid blue;
+}
